@@ -120,6 +120,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "reduxApp"
+    }
+  },
+  "defaultProject": "reduxApp",
+  "cli": {
+    "defaultCollection": "@ngrx/schematics"
+  }
 }
