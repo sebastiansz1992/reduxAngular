@@ -1,6 +1,20 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import * as fromPaymentMethod from './payment-method.reducer';
+import { PaymentMethodsState, paymentMethodFeatureKey } from './payment-method.reducer';
 
-export const selectPaymentMethodState = createFeatureSelector<fromPaymentMethod.State>(
-  fromPaymentMethod.paymentMethodFeatureKey
+export const selectPaymentMethodState = createFeatureSelector<PaymentMethodsState>(
+  paymentMethodFeatureKey
+);
+
+export const getPaymentMethodState = createFeatureSelector<PaymentMethodsState>(
+  paymentMethodFeatureKey
+);
+
+export const getPaymentMethodsList = createSelector(
+  getPaymentMethodState,
+  (state: PaymentMethodsState) => state.paymentMethods.list
+);
+
+export const getPreferredPaymentMethod = createSelector(
+  getPaymentMethodState,
+  (state: PaymentMethodsState) => state.paymentMethods.preferred
 );

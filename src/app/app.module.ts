@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { reducers, metaReducers } from './reducers';
+import { EffectsModule } from '@ngrx/effects';
+import { PaymentMethodEffects } from './payments/store/payment-method/payment-method.effects';
 
 @NgModule({
   declarations: [
